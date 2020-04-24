@@ -4,7 +4,9 @@
 
 
 # vcdExtra <img src="vcdExtra-logo.png" align="right" height="200px" />
-## Extensions and additions to vcd: Visualizing Categorical Data 
+## Extensions and additions to vcd: Visualizing Categorical Data
+
+_NOTE: This fork of the library contains a very minor change within the calculation of the CMH test. As noted in [this issue](https://github.com/friendly/vcdExtra/issues/3#issue-331327557), the `solve` function in R throws an error in this function when processing a large, sparse table (i.e. many strata where each statum may have many zeroes). The suggested solution to replace `solve` with `MASS:ginv` effectively worked, and we plan to introduce testing and submit a PR back to the original author.  
 
 Version 0.7-3
 
