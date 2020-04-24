@@ -251,7 +251,7 @@ CMHtest3 <- function(object,
 # basic CMH calculation
 cmh <- function(n, m,A, V, df) {
 	AVA <- A %*% V %*% t(A)
-	Q <- t(n-m) %*% t(A) %*% solve(AVA) %*% A %*% (n-m)
+	Q <- t(n-m) %*% t(A) %*% MASS::ginv(AVA) %*% A %*% (n-m)
 	pvalue <- pchisq(Q, df, lower.tail=FALSE)
 	c(Q, df, pvalue)
 }
